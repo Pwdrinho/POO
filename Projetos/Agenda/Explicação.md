@@ -4,14 +4,14 @@ Implementar uma solução que simule o funcionamento de uma agenda de pessoas e 
 ### Requisitos Funcionais:
 
 - (criar) armazenamento de telefone;
--mecanismo básico de busca (por nome, por telefone);
--(visualizar) listagem de todo o conteúdo da agenda;
--excluir pessoas;
--editar pessoas e contatos;
+- mecanismo básico de busca (por nome, por telefone);
+- (visualizar) listagem de todo o conteúdo da agenda;
+- excluir pessoas;
+- editar pessoas e contatos;
 
 ### Requisitos não funcionais:
 
--utilizar o terminal BASH para interagir com os usuários (print, input)
+- utilizar o terminal BASH para interagir com os usuários (print, input)
 ---
 ### Casos de Uso (lista de substantivo e verbos):
 Deseja-se simular o comportamento de uma agenda de pessoas, com os seus respectivos contatos. 
