@@ -2,8 +2,9 @@ agenda = []
 
 def criar_contato():
     nome = input("Nome: ")
+    Maiuscula = nome.title()
     telefone = input("Telefone: ")
-    agenda.append({"nome": nome, "telefone": telefone})
+    agenda.append({"nome": Maiuscula, "telefone": telefone})
     print("Contato adicionado!")
 
 def listar_contatos():
@@ -20,9 +21,11 @@ def editar_contato():
         if idx < 0 or idx >= len(agenda):
             print("ID inválido.")
             return
-        nome = input("Novo nome: ")
-        telefone = input("Novo telefone: ")
-        agenda[idx] = {"nome": nome, "telefone": telefone}
+        print(f"Editando contato: {agenda[idx]['nome']}")
+        Nnome = input("\nNovo nome: ")
+        Maiuscula = Nnome.title()
+        Ntelefone = input("Novo telefone: ")
+        agenda[idx] = {"nome": Maiuscula, "telefone": Ntelefone}
         print("Contato atualizado!")
     except ValueError:
         print("Entrada inválida.")
@@ -39,11 +42,27 @@ def remover_contato():
     except ValueError:
         print("Entrada inválida.")
 
+def buscar_contato():
+    termo = input("Digite o nome ou parte do nome a buscar: ").lower()
+    encontrados = []
+
+    for i, contato in enumerate(agenda):
+        if termo in contato['nome'].lower():
+            encontrados.append((i, contato))
+
+    if encontrados:
+        print("\nContatos encontrados:")
+        for i, contato in encontrados:
+            print(f"[{i}] Nome: {contato['nome']}, Telefone: {contato['telefone']}")
+    else:
+        print("Nenhum contato encontrado.")
+
+
 def menu():
-    print("\n--- Agenda ---")
+    print("\n--- Agenda de Contatos ---")
     while True:
-        print("\n1. Criar\n2. Listar\n3. Editar\n4. Remover\n5. Sair")
-        opcao = input("Escolha: ")
+        print("\n1. Adicionar Contato\n2. Listar Contatos\n3. Editar Contatos\n4. Remover Contatos\n5. Buscar Contatos\n6. Sair")
+        opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
             criar_contato()
@@ -54,6 +73,8 @@ def menu():
         elif opcao == '4':
             remover_contato()
         elif opcao == '5':
+            buscar_contato()
+        elif opcao == '6':
             print("Saindo...")
             break
         else:
