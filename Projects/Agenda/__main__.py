@@ -14,7 +14,7 @@ def menu():
 
         if opcao == "1":
             nome = input("Nome: ")
-            Maiuscula = nome.capitalize()
+            Maiuscula = nome.title()
             telefone = input("Telefone: ")
             agenda.adicionar_contato(Maiuscula, telefone)
 
@@ -46,7 +46,7 @@ def menu():
             break
 
         else:
-            print("Opção inválida! Tente novamente.")
+            print("\n Opção inválida! Tente novamente.")
 
 if __name__ == "__main__":
     menu()

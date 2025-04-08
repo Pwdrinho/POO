@@ -10,7 +10,7 @@ class Agenda:
 
     def listar_contatos(self):
         if not self.contatos:
-            print("A agenda está vazia.")
+            print("\nA agenda está vazia.")
         else:
             for i, contato in enumerate(self.contatos):
                 print(f"[{i}] Nome: {contato.nome}, Telefone: {contato.telefone}")
@@ -26,7 +26,7 @@ class Agenda:
 
     def remover_contato(self, indice):
         if not self.contatos:
-            print("A agenda está vazia.")
+            print("\nA agenda está vazia.")
             return
 
         if 0 <= indice < len(self.contatos):
